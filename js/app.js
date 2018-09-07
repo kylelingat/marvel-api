@@ -18,13 +18,13 @@ function getMarvelResponse() {
     ts: ts,
     apikey: PUBLIC_KEY,
     hash: hash,
-    name: "Groot"
+    name: "Thor"
     })
     .done(function(data) {
       // sort of a long dump you will need to sort through
-      console.log(data.data.results[0]);
+      console.log(data.data.results[0].thumbnail);
       $("#test").text(data.data.results[0].name)
-      $("#my_image").attr("src","second.jpg");
+      $("#my_image").attr("src",data.data.results[0].thumbnail.path + "/standard_fantastic.jpg");
     })
     .fail(function(err){
       // the error codes are listed on the dev site
