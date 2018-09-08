@@ -19,14 +19,27 @@ function getMarvelResponse(charName) {
             console.log(data)
             console.log(data.data.results[0].thumbnail);
 
+            var heroBanner = document.createElement("DIV");
+            heroBanner.className = "heroBanner";
+
+            var heroTitleNode = document.createElement("DIV");
             var placeName = document.createElement("h1");
+            placeName.className = "heroTitle";
+            heroTitleNode.appendChild(placeName);
             var grabbedName = document.createTextNode(data.data.results[0].name);
-
-            var imgHolder = document.createElement("IMG");
-            imgHolder.setAttribute("src", data.data.results[0].thumbnail.path + "/standard_fantastic.jpg");
-
             placeName.appendChild(grabbedName);
-            document.getElementById("container").appendChild(placeName);
+            $(heroBanner).append(placeName);
+
+            var imgHolder = document.createElement("DIV");
+            imgHolder.className = "heroBackgroundImage";
+            var backgroundImageUrl = data.data.results[0].thumbnail.path + "/portrait_uncanny.jpg";
+            $(imgHolder).css("background-image", "url('" + backgroundImageUrl + "')");
+            $(heroBanner).append(imgHolder);
+
+
+
+            document.getElementById('avengersContainer').appendChild(heroBanner);
+
         })
         .fail(function(err) {
             // the error codes are listed on the dev site
@@ -36,3 +49,7 @@ function getMarvelResponse(charName) {
 
 getMarvelResponse("Captain America");
 getMarvelResponse("Thor");
+getMarvelResponse("Iron Man");
+getMarvelResponse("Hulk");
+getMarvelResponse("Black Widow");
+getMarvelResponse("Hawkeye");

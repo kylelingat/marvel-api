@@ -1,0 +1,94 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #252830;
+}
+
+.groupTitle {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  margin: auto;
+  width: 95%;
+  border-radius: 10px;
+  font-family: 'Titillium Web';
+}
+
+#avengersTitle {
+  background-color: #D73C2C;
+}
+
+#gotgTitle {
+  background-color: #B4BA00;
+}
+
+#avengersContainer {
+  display: grid;
+  margin: auto;
+  width: 99%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  grid-template-rows: 1fr;
+}
+
+@media only screen  and (max-width : 1450px) {
+#avengersContainer {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+}
+
+@media only screen  and (max-width : 1150px) {
+#avengersContainer {
+  grid-template-columns: 1fr 1fr;
+}
+}
+
+@media only screen  and (max-width : 900px) {
+#avengersContainer {
+  grid-template-columns: 1fr;
+}
+
+.heroBackgroundImage {
+  background-position: center;
+}
+}
+
+
+#avengers {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.heroTitle {
+  background-color: #0067B0;
+  font-family: 'Roboto';
+  letter-spacing: 2px;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.heroBanner {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.heroBackgroundImage {
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  box-shadow: inset 0 0 50px black;
+
+}
+
+.heroBackgroundImage:hover {
+  background-size: 110%;
+  border-radius: 0px 0px 25px 25px;
+  box-shadow: inset 0 0 100px black;
+}
