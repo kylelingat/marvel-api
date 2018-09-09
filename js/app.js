@@ -38,8 +38,8 @@ function getMarvelResponse(charName) {
 
             if(nameApi == "Thor" || nameApi == "Captain America" || nameApi == "Iron Man" || nameApi == "Hulk" || nameApi == "Black Widow" || nameApi == "Hawkeye"){
               document.getElementById('avengersContainer').appendChild(heroBanner);
-            } else {
-              console.log('tes')
+            } else if (nameApi == "Star-Lord (Peter Quill)" || nameApi == "Gamora" || nameApi == "Drax" || nameApi == "Groot" || nameApi == "Rocket Raccoon" || nameApi == "Mantis") {
+              document.getElementById('gotgContainer').appendChild(heroBanner);
             }
 
         })
@@ -54,4 +54,9 @@ getMarvelResponse("Iron Man");
 getMarvelResponse("Hulk");
 getMarvelResponse("Black Widow");
 getMarvelResponse("Hawkeye");
-getMarvelResponse("Thanos");
+getMarvelResponse("Gamora");
+getMarvelResponse("Groot");
+getMarvelResponse("Drax");
+getMarvelResponse("Rocket Raccoon");
+getMarvelResponse("Star-Lord (Peter Quill)");
+getMarvelResponse("Mantis");
