@@ -1,5 +1,3 @@
-console.log('hello')
-// you will also have to setup the referring domains on your marvel developer portal
 var PRIV_KEY = "efd5b4b98dcfbf76bb31fe576d0b824d1876ca3d";
 var PUBLIC_KEY = "74147ee7b91d932edc968cb4cbbbdd1e";
 var ts = new Date().getTime();
@@ -15,7 +13,6 @@ function getMarvelResponse(charName) {
             name: charName
         })
         .done(function(data) {
-            // sort of a long dump you will need to sort through
             console.log(data)
             console.log(data.data.results[0].thumbnail);
 
@@ -26,7 +23,8 @@ function getMarvelResponse(charName) {
             var placeName = document.createElement("h1");
             placeName.className = "heroTitle";
             heroTitleNode.appendChild(placeName);
-            var grabbedName = document.createTextNode(data.data.results[0].name);
+            var nameApi = data.data.results[0].name
+            var grabbedName = document.createTextNode(nameApi);
             placeName.appendChild(grabbedName);
             $(heroBanner).append(placeName);
 
@@ -38,11 +36,14 @@ function getMarvelResponse(charName) {
 
 
 
-            document.getElementById('avengersContainer').appendChild(heroBanner);
+            if(nameApi == "Thor" || nameApi == "Captain America" || nameApi == "Iron Man" || nameApi == "Hulk" || nameApi == "Black Widow" || nameApi == "Hawkeye"){
+              document.getElementById('avengersContainer').appendChild(heroBanner);
+            } else {
+              console.log('tes')
+            }
 
         })
         .fail(function(err) {
-            // the error codes are listed on the dev site
             console.log(err);
         });
 };
@@ -53,3 +54,4 @@ getMarvelResponse("Iron Man");
 getMarvelResponse("Hulk");
 getMarvelResponse("Black Widow");
 getMarvelResponse("Hawkeye");
+getMarvelResponse("Thanos");
