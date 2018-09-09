@@ -4,7 +4,7 @@ var PRIV_KEY = "efd5b4b98dcfbf76bb31fe576d0b824d1876ca3d";
 var PUBLIC_KEY = "74147ee7b91d932edc968cb4cbbbdd1e";
 var ts = new Date().getTime();
 var hash = CryptoJS.MD5(ts + PRIV_KEY + PUBLIC_KEY).toString();
-var url = 'http://gateway.marvel.com:80/v1/public/characters';
+var url = 'https://gateway.marvel.com:443/v1/public/characters';
 
 function getMarvelResponse(charName) {
     console.log(url);
@@ -31,7 +31,7 @@ function getMarvelResponse(charName) {
             $(heroBanner).append(placeName);
 
             var imgHolder = document.createElement("DIV");
-            imgHolder.className = "heroBackgroundImage";
+            imgHolder.className = "heroBackgroundImage  ";
             var backgroundImageUrl = data.data.results[0].thumbnail.path + "/portrait_uncanny.jpg";
             $(imgHolder).css("background-image", "url('" + backgroundImageUrl + "')");
             $(heroBanner).append(imgHolder);
