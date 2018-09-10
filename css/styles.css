@@ -23,32 +23,20 @@ body {
   background-color: #B4BA00;
 }
 
+#villainsTitle {
+  background-color: #3E005D;
+}
+
 #avengersContainer, #gotgContainer {
   display: grid;
   margin: auto;
+  margin-bottom: 20px;
   width: 90%;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   grid-template-rows: 1fr;
 }
 
-@media only screen  and (max-width : 1450px) {
-#avengersContainer {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-}
-
-@media only screen  and (max-width : 1150px) {
-#avengersContainer {
-  grid-template-columns: 1fr 1fr;
-}
-}
-
-@media only screen  and (max-width : 900px) {
-#avengersContainer {
-  grid-template-columns: 1fr;
-}
 
 .heroBackgroundImage {
   background-position: center;
@@ -66,7 +54,10 @@ body {
   font-family: 'Roboto';
   letter-spacing: 2px;
   color: white;
+  margin: auto;
+  margin-top: 20px;
   margin-bottom: 10px;
+  width: 100%;
   font-size: 1.3em;
 }
 
@@ -74,13 +65,14 @@ body {
   margin: auto;
   width: 100%;
   text-align: center;
+  overflow: hidden;
 }
 
 .heroBackgroundImage {
   height: 400px;
+  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-size: 100%;
   transition: 0.3s ease-in;
   cursor: pointer;
   box-shadow: inset 0 0 50px black;
@@ -88,7 +80,36 @@ body {
 }
 
 .heroBackgroundImage:hover {
-  background-size: 110%;
+  /* background-size: 110%; */
+
   border-radius: 0px 0px 25px 25px;
   box-shadow: inset 0 0 100px black;
+}
+
+@media only screen  and (max-width : 1450px) {
+#avengersContainer, #gotgContainer {
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 70%;
+  grid-gap: 0px;
+}
+
+.heroBanner {
+  width: 300px;
+}
+
+.heroBackgroundImage {
+  height: 300px;
+}
+
+}
+
+@media only screen  and (max-width : 1150px) {
+#avengersContainer, #gotgContainer {
+  grid-template-columns: 1fr 1fr;
+}
+}
+
+@media only screen  and (max-width : 900px) {
+#avengersContainer, #gotgContainer {
+  grid-template-columns: 1fr;
 }

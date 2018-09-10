@@ -13,8 +13,6 @@ function getMarvelResponse(charName) {
             name: charName
         })
         .done(function(data) {
-            console.log(data)
-            console.log(data.data.results[0].thumbnail);
 
             var heroBanner = document.createElement("DIV");
             heroBanner.className = "heroBanner";
@@ -24,6 +22,10 @@ function getMarvelResponse(charName) {
             placeName.className = "heroTitle";
             heroTitleNode.appendChild(placeName);
             var nameApi = data.data.results[0].name
+            if (nameApi == "Star-Lord (Peter Quill)"){
+              nameApi = "Star-Lord"
+              console.log(nameApi)
+            }
             var grabbedName = document.createTextNode(nameApi);
             placeName.appendChild(grabbedName);
             $(heroBanner).append(placeName);
@@ -38,7 +40,7 @@ function getMarvelResponse(charName) {
 
             if(nameApi == "Thor" || nameApi == "Captain America" || nameApi == "Iron Man" || nameApi == "Hulk" || nameApi == "Black Widow" || nameApi == "Hawkeye"){
               document.getElementById('avengersContainer').appendChild(heroBanner);
-            } else if (nameApi == "Star-Lord (Peter Quill)" || nameApi == "Gamora" || nameApi == "Drax" || nameApi == "Groot" || nameApi == "Rocket Raccoon" || nameApi == "Mantis") {
+            } else if (nameApi == "Star-Lord" || nameApi == "Gamora" || nameApi == "Drax" || nameApi == "Groot" || nameApi == "Rocket Raccoon" || nameApi == "Mantis") {
               document.getElementById('gotgContainer').appendChild(heroBanner);
             }
 
