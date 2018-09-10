@@ -24,7 +24,10 @@ function getMarvelResponse(charName) {
             var nameApi = data.data.results[0].name
             if (nameApi == "Star-Lord (Peter Quill)"){
               nameApi = "Star-Lord"
-              console.log(nameApi)
+            } else if (nameApi == "Abomination (Emil Blonsky)"){
+              nameApi = "Abomination"
+            } else if (nameApi == "Vulture (Adrian Toomes)"){
+              nameApi = "Vulture"
             }
             var grabbedName = document.createTextNode(nameApi);
             placeName.appendChild(grabbedName);
@@ -38,10 +41,33 @@ function getMarvelResponse(charName) {
 
 
 
-            if(nameApi == "Thor" || nameApi == "Captain America" || nameApi == "Iron Man" || nameApi == "Hulk" || nameApi == "Black Widow" || nameApi == "Hawkeye"){
+            if(nameApi == "Thor" ||
+               nameApi == "Captain America" ||
+               nameApi == "Iron Man" ||
+               nameApi == "Hulk" ||
+               nameApi == "Black Widow" ||
+               nameApi == "Hawkeye"){
               document.getElementById('avengersContainer').appendChild(heroBanner);
-            } else if (nameApi == "Star-Lord" || nameApi == "Gamora" || nameApi == "Drax" || nameApi == "Groot" || nameApi == "Rocket Raccoon" || nameApi == "Mantis") {
+            } else if (nameApi == "Star-Lord" ||
+                       nameApi == "Gamora" ||
+                       nameApi == "Drax" ||
+                       nameApi == "Groot" ||
+                       nameApi == "Rocket Raccoon" ||
+                       nameApi == "Mantis") {
               document.getElementById('gotgContainer').appendChild(heroBanner);
+            } else if (nameApi == "Thanos" ||
+                       nameApi == "Ultron" ||
+                       nameApi == "Ronan" ||
+                       nameApi == "Justin Hammer" ||
+                       nameApi == "Ego" ||
+                       nameApi == "Dormammu" ||
+                       nameApi == "Red Skull" ||
+                       nameApi == "Abomination" ||
+                       nameApi == "Loki" ||
+                       nameApi == "Arnim Zola" ||
+                       nameApi == "Vulture" ||
+                       nameApi == "Crossbones") {
+              document.getElementById('villainsContainer').appendChild(heroBanner)
             }
 
         })
@@ -62,3 +88,17 @@ getMarvelResponse("Drax");
 getMarvelResponse("Rocket Raccoon");
 getMarvelResponse("Star-Lord (Peter Quill)");
 getMarvelResponse("Mantis");
+getMarvelResponse("Thanos");
+getMarvelResponse("Ultron");
+getMarvelResponse("Ronan")
+getMarvelResponse("Surtur");
+getMarvelResponse("Justin Hammer")
+getMarvelResponse("Ego")
+getMarvelResponse("Dormammu")
+getMarvelResponse("Red Skull")
+getMarvelResponse("Abomination (Emil Blonsky)")
+getMarvelResponse("Loki")
+getMarvelResponse("Arnim Zola")
+getMarvelResponse("Vulture (Adrian Toomes)")
+getMarvelResponse("Iron Monger")
+getMarvelResponse("Crossbones")
