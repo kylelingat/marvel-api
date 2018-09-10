@@ -100,7 +100,8 @@ body {
 @media only screen  and (max-width : 1450px) {
 #avengersContainer, #gotgContainer, #villainsContainer {
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 0px;
+  width: 70%;
+  grid-gap: 10px;
 }
 
 .heroBanner {
