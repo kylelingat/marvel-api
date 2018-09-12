@@ -13,7 +13,6 @@ function getMarvelResponse(charName) {
             name: charName
         })
         .done(function(data) {
-
             var heroBanner = document.createElement("DIV");
             heroBanner.className = "heroBanner";
 
@@ -21,23 +20,28 @@ function getMarvelResponse(charName) {
             var placeName = document.createElement("h1");
             placeName.className = "heroTitle";
             heroTitleNode.appendChild(placeName);
-            var nameApi = data.data.results[0].name
+            var nameApi = data.data.results[0].name;
             if (nameApi == "Star-Lord (Peter Quill)"){
               nameApi = "Star-Lord"
             } else if (nameApi == "Abomination (Emil Blonsky)"){
               nameApi = "Abomination"
             } else if (nameApi == "Vulture (Adrian Toomes)"){
               nameApi = "Vulture"
+            } else if (nameApi == "Quake (Daisy Johnson)"){
+              nameApi = "Quake"
             }
             var grabbedName = document.createTextNode(nameApi);
             placeName.appendChild(grabbedName);
             $(heroBanner).append(placeName);
 
             var imgHolder = document.createElement("DIV");
-            imgHolder.className = "heroBackgroundImage  ";
+            imgHolder.className = "heroBackgroundImage";
             var backgroundImageUrl = data.data.results[0].thumbnail.path + "/portrait_uncanny.jpg";
-            $(imgHolder).css("background-image", "url('" + backgroundImageUrl + "')");
-            $(heroBanner).append(imgHolder);
+            $(imgHolder).css("background-image", `url(${backgroundImageUrl})`);
+            var heroBackgroundImageContainer = document.createElement("DIV");
+            heroBackgroundImageContainer.className = "heroBackgroundImageContainer";
+            $(heroBanner).append(heroBackgroundImageContainer);
+            $(heroBackgroundImageContainer).append(imgHolder);
 
 
 
@@ -68,6 +72,13 @@ function getMarvelResponse(charName) {
                        nameApi == "Vulture" ||
                        nameApi == "Crossbones") {
               document.getElementById('villainsContainer').appendChild(heroBanner)
+            } else if (nameApi == "Nick Fury" ||
+                       nameApi == "Maria Hill" ||
+                       nameApi == "Quake" ||
+                       nameApi == "Jimmy Woo" ||
+                       nameApi == "Sharon Carter" ||
+                       nameApi == "Hank Pym") {
+              document.getElementById('shieldContainer').appendChild(heroBanner)
             }
 
         })
@@ -91,7 +102,6 @@ getMarvelResponse("Mantis");
 getMarvelResponse("Thanos");
 getMarvelResponse("Ultron");
 getMarvelResponse("Ronan")
-getMarvelResponse("Surtur");
 getMarvelResponse("Justin Hammer")
 getMarvelResponse("Ego")
 getMarvelResponse("Dormammu")
@@ -102,3 +112,9 @@ getMarvelResponse("Arnim Zola")
 getMarvelResponse("Vulture (Adrian Toomes)")
 getMarvelResponse("Iron Monger")
 getMarvelResponse("Crossbones")
+getMarvelResponse("Nick Fury")
+getMarvelResponse("Maria Hill")
+getMarvelResponse("Quake (Daisy Johnson)")
+getMarvelResponse("Jimmy Woo")
+getMarvelResponse("Sharon Carter")
+getMarvelResponse("Hank Pym")
