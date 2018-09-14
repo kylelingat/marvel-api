@@ -5,14 +5,7 @@ var hash = CryptoJS.MD5(ts + PRIV_KEY + PUBLIC_KEY).toString();
 var url = 'https://gateway.marvel.com:443/v1/public/characters';
 var modal = document.getElementById('myModal');
 var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-    modal.style.display = "none";
-}
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+
 
 function getMarvelResponse(charName) {
     console.log(url);
@@ -55,10 +48,29 @@ function getMarvelResponse(charName) {
 
             heroBackgroundImageContainer.onclick = function() {
                 modal.style.display = "block";
-                var modalName = document.createElement("div");
+                var modalGridItem = document.createElement("DIV");
+                modalGridItem.className = "modalGridItem";
+
+                var modalName = document.createElement("h1");
                 modalName.className = "heroModalName";
-                $(".modal-content").append($(modalName))
+
+                modalName.appendChild(document.createTextNode(nameApi));
+                $("#heroModalNameContainer").append(modalName)
+
+
+
             };
+
+            span.onclick = function() {
+                modal.style.display = "none";
+                $(".modalGridItem").empty()
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    $(".modalGridItem").empty()
+                }
+            }
 
 
 
@@ -107,32 +119,32 @@ function getMarvelResponse(charName) {
 
 getMarvelResponse("Captain America");
 getMarvelResponse("Thor");
-getMarvelResponse("Iron Man");
-getMarvelResponse("Hulk");
-getMarvelResponse("Black Widow");
-getMarvelResponse("Hawkeye");
-getMarvelResponse("Gamora");
-getMarvelResponse("Groot");
-getMarvelResponse("Drax");
-getMarvelResponse("Rocket Raccoon");
-getMarvelResponse("Star-Lord (Peter Quill)");
-getMarvelResponse("Mantis");
-getMarvelResponse("Thanos");
-getMarvelResponse("Ultron");
-getMarvelResponse("Ronan")
-getMarvelResponse("Justin Hammer")
-getMarvelResponse("Ego")
-getMarvelResponse("Dormammu")
-getMarvelResponse("Red Skull")
-getMarvelResponse("Abomination (Emil Blonsky)")
-getMarvelResponse("Loki")
-getMarvelResponse("Arnim Zola")
-getMarvelResponse("Vulture (Adrian Toomes)")
-getMarvelResponse("Iron Monger")
-getMarvelResponse("Crossbones")
-getMarvelResponse("Nick Fury")
-getMarvelResponse("Maria Hill")
-getMarvelResponse("Quake (Daisy Johnson)")
-getMarvelResponse("Jimmy Woo")
-getMarvelResponse("Sharon Carter")
-getMarvelResponse("Hank Pym")
+// getMarvelResponse("Iron Man");
+// getMarvelResponse("Hulk");
+// getMarvelResponse("Black Widow");
+// getMarvelResponse("Hawkeye");
+// getMarvelResponse("Gamora");
+// getMarvelResponse("Groot");
+// getMarvelResponse("Drax");
+// getMarvelResponse("Rocket Raccoon");
+// getMarvelResponse("Star-Lord (Peter Quill)");
+// getMarvelResponse("Mantis");
+// getMarvelResponse("Thanos");
+// getMarvelResponse("Ultron");
+// getMarvelResponse("Ronan")
+// getMarvelResponse("Justin Hammer")
+// getMarvelResponse("Ego")
+// getMarvelResponse("Dormammu")
+// getMarvelResponse("Red Skull")
+// getMarvelResponse("Abomination (Emil Blonsky)")
+// getMarvelResponse("Loki")
+// getMarvelResponse("Arnim Zola")
+// getMarvelResponse("Vulture (Adrian Toomes)")
+// getMarvelResponse("Iron Monger")
+// getMarvelResponse("Crossbones")
+// getMarvelResponse("Nick Fury")
+// getMarvelResponse("Maria Hill")
+// getMarvelResponse("Quake (Daisy Johnson)")
+// getMarvelResponse("Jimmy Woo")
+// getMarvelResponse("Sharon Carter")
+// getMarvelResponse("Hank Pym")
