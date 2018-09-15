@@ -119,32 +119,32 @@ function getMarvelResponse(charName) {
 
 getMarvelResponse("Captain America");
 getMarvelResponse("Thor");
-// getMarvelResponse("Iron Man");
-// getMarvelResponse("Hulk");
-// getMarvelResponse("Black Widow");
-// getMarvelResponse("Hawkeye");
-// getMarvelResponse("Gamora");
-// getMarvelResponse("Groot");
-// getMarvelResponse("Drax");
-// getMarvelResponse("Rocket Raccoon");
-// getMarvelResponse("Star-Lord (Peter Quill)");
-// getMarvelResponse("Mantis");
-// getMarvelResponse("Thanos");
-// getMarvelResponse("Ultron");
-// getMarvelResponse("Ronan")
-// getMarvelResponse("Justin Hammer")
-// getMarvelResponse("Ego")
-// getMarvelResponse("Dormammu")
-// getMarvelResponse("Red Skull")
-// getMarvelResponse("Abomination (Emil Blonsky)")
-// getMarvelResponse("Loki")
-// getMarvelResponse("Arnim Zola")
-// getMarvelResponse("Vulture (Adrian Toomes)")
-// getMarvelResponse("Iron Monger")
-// getMarvelResponse("Crossbones")
-// getMarvelResponse("Nick Fury")
-// getMarvelResponse("Maria Hill")
-// getMarvelResponse("Quake (Daisy Johnson)")
-// getMarvelResponse("Jimmy Woo")
-// getMarvelResponse("Sharon Carter")
-// getMarvelResponse("Hank Pym")
+getMarvelResponse("Iron Man");
+getMarvelResponse("Hulk");
+getMarvelResponse("Black Widow");
+getMarvelResponse("Hawkeye");
+getMarvelResponse("Gamora");
+getMarvelResponse("Groot");
+getMarvelResponse("Drax");
+getMarvelResponse("Rocket Raccoon");
+getMarvelResponse("Star-Lord (Peter Quill)");
+getMarvelResponse("Mantis");
+getMarvelResponse("Thanos");
+getMarvelResponse("Ultron");
+getMarvelResponse("Ronan")
+getMarvelResponse("Justin Hammer")
+getMarvelResponse("Ego")
+getMarvelResponse("Dormammu")
+getMarvelResponse("Red Skull")
+getMarvelResponse("Abomination (Emil Blonsky)")
+getMarvelResponse("Loki")
+getMarvelResponse("Arnim Zola")
+getMarvelResponse("Vulture (Adrian Toomes)")
+getMarvelResponse("Iron Monger")
+getMarvelResponse("Crossbones")
+getMarvelResponse("Nick Fury")
+getMarvelResponse("Maria Hill")
+getMarvelResponse("Quake (Daisy Johnson)")
+getMarvelResponse("Jimmy Woo")
+getMarvelResponse("Sharon Carter")
+getMarvelResponse("Hank Pym")
