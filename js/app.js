@@ -48,14 +48,18 @@ function getMarvelResponse(charName) {
 
             heroBackgroundImageContainer.onclick = function() {
                 modal.style.display = "block";
-                var modalGridItem = document.createElement("DIV");
-                modalGridItem.className = "modalGridItem";
-
                 var modalName = document.createElement("h1");
                 modalName.className = "heroModalName";
-
                 modalName.appendChild(document.createTextNode(nameApi));
-                $("#heroModalNameContainer").append(modalName)
+                $("#heroModalNameContainer").append(modalName);
+                var modalImage = data.data.results[0].thumbnail.path + "/portrait_incredible.jpg";
+                $("#modalImageContainer").css("background-image", `url(${modalImage})`);
+
+                var modalBio = data.data.results[0].description;
+                $("#modalBio").text(modalBio)
+
+
+
 
 
 

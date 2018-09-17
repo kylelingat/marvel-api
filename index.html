@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MCU Characters</title>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
-  <link rel="stylesheet" href="./css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto|Titillium+Web" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Titillium+Web" rel="stylesheet">
 
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="avengers">
-      <h1 id="avengersTitle" class="groupTitle">THE ORIGINAL AVENGERS</h1>
-    <div id="avengersContainer"></div>
-  </div>
-  <div id="gotg">
-    <h1 id="gotgTitle" class="groupTitle">GUARDIANS OF THE GALAXY</h1>
-    <div id="gotgContainer"></div>
-  </div>
-  <div id="villains">
-    <h1 id="villainsTitle" class="groupTitle">VILLAINS</h1>
-    <div id="villainsContainer"></div>
-  </div>
-  <div id="shield">
-    <h1 id="shieldTitle" class="groupTitle">S.H.I.E.L.D.</h1>
-    <div id="shieldContainer"></div>
-  </div>
-  <!-- The Modal -->
-<div id="myModal" class="modal">
+        <h1 id="avengersTitle" class="groupTitle">THE ORIGINAL AVENGERS</h1>
+        <div id="avengersContainer"></div>
+    </div>
+    <div id="gotg">
+        <h1 id="gotgTitle" class="groupTitle">GUARDIANS OF THE GALAXY</h1>
+        <div id="gotgContainer"></div>
+    </div>
+    <div id="villains">
+        <h1 id="villainsTitle" class="groupTitle">VILLAINS</h1>
+        <div id="villainsContainer"></div>
+    </div>
+    <div id="shield">
+        <h1 id="shieldTitle" class="groupTitle">S.H.I.E.L.D.</h1>
+        <div id="shieldContainer"></div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-  <div id="heroModalNameContainer" class="modalGridItem"></div>
-  <div class="closeButton"><span class="close">&times;</span></div>
-  </div>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div id="heroModalNameContainer" class="modalGridItem"></div>
+            <div class="closeButton"><span class="close">&times;</span></div>
+            <div id="midSection">
+              <div id="modalImageContainer"></div>
+              <div id="modalBioContainer">
+                <p id="modalBio"></p>
+              </div>
+          </div>
+        </div>
 
-</div>
-  <script src="js/app.js" charset="utf-8"></script>
-  </body>
+    </div>
+    <script src="js/app.js" charset="utf-8"></script>
+</body>
+
 </html>
