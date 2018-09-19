@@ -15,13 +15,14 @@ height: 100vh;
 }
 
 #form {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 }
 
 label {
   color: #C0C0C0;
   font-family: 'Roboto';
+  font-size: 18px;
 }
 
 input[type=text] {
@@ -33,13 +34,16 @@ input[type=text] {
     border-radius: 4px;
     box-sizing: border-box;
     margin-bottom: 40px;
+    font-size: 21px;
 }
 
 input[type=submit] {
-    width: 100%;
+    width: 50%;
+    display: block;
+    margin: auto;
     background-color: #3E005D;
     color: white;
-    padding: 20px 20px;
+    padding: 12px 20px;
     border: 5px solid #3E005D;
     border-radius: 4px;
     cursor: pointer;
@@ -56,6 +60,20 @@ input[type=submit]:hover {
 
 #characters {
   display: none;
+}
+
+#refer {
+  margin-top: 30px;
+}
+
+#refer p {
+  background-color: #E74C3C;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  display: inline;
+  font-family: 'Roboto';
+  padding: 2px;
 }
 .groupTitle {
   font-size: 30px;
