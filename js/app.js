@@ -10,6 +10,8 @@ var span = document.getElementsByClassName("close")[0];
 function othername() {
     PUBLIC_KEY = document.getElementById("publicKeyInput").value;
     PRIV_KEY = document.getElementById("privateKeyInput").value;
+    console.log(PUBLIC_KEY);
+    console.log(PRIV_KEY)
 }
 
 function getMarvelResponse(charName) {
@@ -136,9 +138,9 @@ function getMarvelResponse(charName) {
 
 // getMarvelResponse("Captain America");
 // getMarvelResponse("Thor");
-getMarvelResponse("Iron Man");
+// getMarvelResponse("Iron Man");
 // getMarvelResponse("Hulk");
-getMarvelResponse("Black Widow");
+// getMarvelResponse("Black Widow");
 // getMarvelResponse("Hawkeye");
 // getMarvelResponse("Gamora");
 // getMarvelResponse("Groot");
