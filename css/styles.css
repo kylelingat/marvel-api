@@ -5,6 +5,12 @@ body {
   background-color: #1C2A39;
 }
 
+#inputKeys {
+}
+
+#characters {
+  display: none;
+}
 .groupTitle {
   font-size: 30px;
   text-align: center;
@@ -198,6 +204,16 @@ body {
   font-size: 20px;
   letter-spacing: 2px;
   line-height: 1.5;
+  margin: 25px;
+}
+
+.noBio {
+  grid-template-columns: 1fr !important;
+  background-color: transparent !important;
+}
+
+.noBioImage {
+  background-size: contain !important;
 }
 
 @media only screen  and (max-width : 1450px) {
@@ -234,6 +250,7 @@ body {
 #modalImageContainer {
   margin: auto;
   margin-top: 30px;
+  background-size: contain;
 }
 #midSection {
   grid-template-columns: 1fr;
@@ -243,8 +260,7 @@ body {
 }
 #modalBio {
   text-align: center;
-  padding-left: 25px;
-  padding-right: 25px;
+  margin: 20px;
   letter-spacing: 0px;
 }
 }

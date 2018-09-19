@@ -1,11 +1,16 @@
-var PRIV_KEY = "efd5b4b98dcfbf76bb31fe576d0b824d1876ca3d";
-var PUBLIC_KEY = "74147ee7b91d932edc968cb4cbbbdd1e";
+var PRIV_KEY;
+//"efd5b4b98dcfbf76bb31fe576d0b824d1876ca3d"
+var PUBLIC_KEY;
+//"74147ee7b91d932edc968cb4cbbbdd1e";
 var ts = new Date().getTime();
 var hash = CryptoJS.MD5(ts + PRIV_KEY + PUBLIC_KEY).toString();
 var url = 'https://gateway.marvel.com:443/v1/public/characters';
 var modal = document.getElementById('myModal');
 var span = document.getElementsByClassName("close")[0];
-
+function othername() {
+    PUBLIC_KEY = document.getElementById("publicKeyInput").value;
+    PRIV_KEY = document.getElementById("privateKeyInput").value;
+}
 
 function getMarvelResponse(charName) {
     console.log(url);
@@ -16,6 +21,7 @@ function getMarvelResponse(charName) {
             name: charName
         })
         .done(function(data) {
+          console.log(data.data.results[0])
             var heroBanner = document.createElement("DIV");
             heroBanner.className = "heroBanner";
 
@@ -54,8 +60,15 @@ function getMarvelResponse(charName) {
                 $("#heroModalNameContainer").append(modalName);
                 var modalImage = data.data.results[0].thumbnail.path + "/portrait_incredible.jpg";
                 $("#modalImageContainer").css("background-image", `url(${modalImage})`);
-
                 var modalBio = data.data.results[0].description;
+                if(modalBio == ""){
+                  $("#midSection").addClass("noBio");
+                  $("#modalImageContainer").addClass("noBioImage");
+                } else if (modalBio != ""){
+                  $("#midSection").removeClass("noBio");
+                  $("#modalImageContainer").removeClass("noBioImage")
+                }
+
                 $("#modalBio").text(modalBio)
 
 
@@ -121,11 +134,11 @@ function getMarvelResponse(charName) {
 };
 
 
-getMarvelResponse("Captain America");
-getMarvelResponse("Thor");
-// getMarvelResponse("Iron Man");
+// getMarvelResponse("Captain America");
+// getMarvelResponse("Thor");
+getMarvelResponse("Iron Man");
 // getMarvelResponse("Hulk");
-// getMarvelResponse("Black Widow");
+getMarvelResponse("Black Widow");
 // getMarvelResponse("Hawkeye");
 // getMarvelResponse("Gamora");
 // getMarvelResponse("Groot");
