@@ -45,7 +45,6 @@ body {
 
 #avengers {
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .heroTitle {
@@ -127,18 +126,14 @@ body {
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #323f4c;
     margin: auto;
     padding: 20px;
     width: 80%;
-    display: grid;
-    grid-template-columns: 95% 5%;
 }
 
-/* The Close Button */
 .close {
     color: #aaaaaa;
-    /* float: right; */
     font-size: 28px;
     font-weight: bold;
     margin:  auto;
@@ -146,13 +141,14 @@ body {
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
 
 .heroModalName {
   text-align: center;
+  color: white;
 }
 
 .modalGridItem {
@@ -161,14 +157,47 @@ body {
 
 .closeButton {
   margin: auto;
+  float: right;
+  position: relative;
+  top: -90px;
 }
 
 #heroModalNameContainer {
-  width: 80%;
-  border-bottom: 1px solid #A0A0A0;
-  font-family: 'Roboto';
+  width: 60%;
+  border-bottom: 4px solid #A0A0A0;
+  font-family: 'Titillium Web';
   color: #505050;
   letter-spacing: 2px;
+}
+
+#midSection {
+  display: grid;
+  grid-template-columns: 27% 70%;
+  width: 90%;
+  margin:  auto;
+  margin-top: 40px;
+  background-color: #5a656f;
+}
+
+#modalImageContainer {
+  width: 100%;
+  height: 324px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#modalBioContainer {
+  width: 100%;
+  /* background-color: green; */
+}
+
+#modalBio {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 1.5;
 }
 
 @media only screen  and (max-width : 1450px) {
@@ -201,4 +230,21 @@ body {
 @media only screen  and (max-width : 900px) {
 #avengersContainer, #gotgContainer, #villainsContainer, #shieldContainer {
   grid-template-columns: 1fr;
+}
+#modalImageContainer {
+  margin: auto;
+  margin-top: 30px;
+}
+#midSection {
+  grid-template-columns: 1fr;
+  margin: auto;
+  width: 100%;
+  margin-top: 10px;
+}
+#modalBio {
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  letter-spacing: 0px;
+}
 }
