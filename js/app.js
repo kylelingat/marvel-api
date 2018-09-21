@@ -122,18 +122,18 @@ function getMarvelResponse(charName) {
 
 
 getMarvelResponse("Captain America");
-getMarvelResponse("Thor");
-getMarvelResponse("Iron Man");
-getMarvelResponse("Hulk");
+// getMarvelResponse("Thor");
+// getMarvelResponse("Iron Man");
+// getMarvelResponse("Hulk");
 // getMarvelResponse("Black Widow");
 // getMarvelResponse("Hawkeye");
 // getMarvelResponse("Gamora");
 // getMarvelResponse("Groot");
 // getMarvelResponse("Drax");
 // getMarvelResponse("Rocket Raccoon");
-// getMarvelResponse("Star-Lord (Peter Quill)");
+getMarvelResponse("Star-Lord (Peter Quill)");
 // getMarvelResponse("Mantis");
-// getMarvelResponse("Thanos");
+getMarvelResponse("Thanos");
 // getMarvelResponse("Ultron");
 // getMarvelResponse("Ronan")
 // getMarvelResponse("Justin Hammer")
