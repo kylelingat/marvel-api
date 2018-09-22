@@ -1,10 +1,112 @@
 body {
   width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   background-color: #1C2A39;
 }
 
+#inputKeys {
+  display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100vh;
+}
+
+#form {
+  width: 70%;
+  margin: 0 auto;
+}
+
+label {
+  color: #C0C0C0;
+  font-family: 'Roboto';
+  font-size: 18px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    font-size: 21px;
+}
+
+input[type=submit] {
+    width: 50%;
+    display: block;
+    margin: auto;
+    background-color: #3E005D;
+    color: white;
+    padding: 12px 20px;
+    border: 5px solid #3E005D;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+    font-family: 'Titillium Web';
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+input[type=submit]:hover {
+    background-color: transparent;
+    border: 5px solid #3E005D;
+}
+
+label span {
+  color: #B71C0C;
+}
+
+.loader {
+  display: none;
+  border: 16px solid #0057A0;
+  border-radius: 50%;
+  border-top: 16px solid #D73C2C;
+  width: 120px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#characters {
+  display: none;
+}
+
+#refer {
+  margin-top: 30px;
+}
+
+#refer p {
+  background-color: #E74C3C;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  display: inline;
+  font-family: 'Roboto';
+  padding: 6px;
+}
 .groupTitle {
   font-size: 30px;
   text-align: center;
@@ -198,6 +300,16 @@ body {
   font-size: 20px;
   letter-spacing: 2px;
   line-height: 1.5;
+  margin: 25px;
+}
+
+.noBio {
+  grid-template-columns: 1fr !important;
+  background-color: transparent !important;
+}
+
+.noBioImage {
+  background-size: contain !important;
 }
 
 @media only screen  and (max-width : 1450px) {
@@ -234,6 +346,7 @@ body {
 #modalImageContainer {
   margin: auto;
   margin-top: 30px;
+  background-size: contain;
 }
 #midSection {
   grid-template-columns: 1fr;
@@ -243,8 +356,7 @@ body {
 }
 #modalBio {
   text-align: center;
-  padding-left: 25px;
-  padding-right: 25px;
+  margin: 20px;
   letter-spacing: 0px;
 }
 }

@@ -1,11 +1,44 @@
-var PRIV_KEY = "efd5b4b98dcfbf76bb31fe576d0b824d1876ca3d";
-var PUBLIC_KEY = "74147ee7b91d932edc968cb4cbbbdd1e";
+var PRIV_KEY;
+//"efd5b4b98dcfbf76bb31fe576d0b824d1876ca3d"
+var PUBLIC_KEY;
+//"74147ee7b91d932edc968cb4cbbbdd1e";
 var ts = new Date().getTime();
-var hash = CryptoJS.MD5(ts + PRIV_KEY + PUBLIC_KEY).toString();
+var hash;
 var url = 'https://gateway.marvel.com:443/v1/public/characters';
 var modal = document.getElementById('myModal');
 var span = document.getElementsByClassName("close")[0];
+function keyCheck() {
+    PUBLIC_KEY = document.getElementById("publicKeyInput").value;
+    PRIV_KEY = document.getElementById("privateKeyInput").value;
+    hash = CryptoJS.MD5(ts + PRIV_KEY + PUBLIC_KEY).toString();
+    console.log(PRIV_KEY);
+    console.log(PUBLIC_KEY);
+    checkApiKey();
+    $('#inputKeys').css("display","none");
+    $('.loader').css("display","block");
+}
 
+function checkApiKey(){
+  $.getJSON(url, {
+          ts: ts,
+          apikey: PUBLIC_KEY,
+          hash: hash
+      })
+      .done(function(data) {
+        $('.loader').css("display","none");
+        console.log(url);
+        $('#characters').css("display", "block")
+        getMarvelResponse("Captain America");
+        getMarvelResponse("Thor");
+      })
+      .fail(function(err) {
+          console.log(err);
+          $('.loader').css("display","none");
+          $('#inputKeys').css("display","flex");
+          $("#publicKeyLabel").html("Enter your Public API Key <span>(Oops, you have entered an incorrect API key)</span>")
+          $("#privateKeyLabel").html("Enter your Private API Key <span>(Oops, you have entered an incorrect API key)</span>")
+      });
+}
 
 function getMarvelResponse(charName) {
     console.log(url);
@@ -16,6 +49,7 @@ function getMarvelResponse(charName) {
             name: charName
         })
         .done(function(data) {
+          console.log(data.data.results[0])
             var heroBanner = document.createElement("DIV");
             heroBanner.className = "heroBanner";
 
@@ -54,8 +88,15 @@ function getMarvelResponse(charName) {
                 $("#heroModalNameContainer").append(modalName);
                 var modalImage = data.data.results[0].thumbnail.path + "/portrait_incredible.jpg";
                 $("#modalImageContainer").css("background-image", `url(${modalImage})`);
-
                 var modalBio = data.data.results[0].description;
+                if(modalBio == ""){
+                  $("#midSection").addClass("noBio");
+                  $("#modalImageContainer").addClass("noBioImage");
+                } else if (modalBio != ""){
+                  $("#midSection").removeClass("noBio");
+                  $("#modalImageContainer").removeClass("noBioImage")
+                }
+
                 $("#modalBio").text(modalBio)
 
 
@@ -121,34 +162,3 @@ function getMarvelResponse(charName) {
 };
 
 
-getMarvelResponse("Captain America");
-// getMarvelResponse("Thor");
-// getMarvelResponse("Iron Man");
-// getMarvelResponse("Hulk");
-// getMarvelResponse("Black Widow");
-// getMarvelResponse("Hawkeye");
-// getMarvelResponse("Gamora");
-// getMarvelResponse("Groot");
-// getMarvelResponse("Drax");
-// getMarvelResponse("Rocket Raccoon");
-getMarvelResponse("Star-Lord (Peter Quill)");
-// getMarvelResponse("Mantis");
-getMarvelResponse("Thanos");
-// getMarvelResponse("Ultron");
-// getMarvelResponse("Ronan")
-// getMarvelResponse("Justin Hammer")
-// getMarvelResponse("Ego")
-// getMarvelResponse("Dormammu")
-// getMarvelResponse("Red Skull")
-// getMarvelResponse("Abomination (Emil Blonsky)")
-// getMarvelResponse("Loki")
-// getMarvelResponse("Arnim Zola")
-// getMarvelResponse("Vulture (Adrian Toomes)")
-// getMarvelResponse("Iron Monger")
-// getMarvelResponse("Crossbones")
-// getMarvelResponse("Nick Fury")
-// getMarvelResponse("Maria Hill")
-// getMarvelResponse("Quake (Daisy Johnson)")
-// getMarvelResponse("Jimmy Woo")
-// getMarvelResponse("Sharon Carter")
-getMarvelResponse("Hank Pym")
