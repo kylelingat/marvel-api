@@ -14,19 +14,19 @@
 </head>
 
 <body>
+
   <div id="inputKeys">
     <form id="form" onsubmit="return false;">
-      <label for="publicKeyInput">Enter your Public Key</label>
+      <label id="publicKeyLabel" for="publicKeyInput">Enter your Public API Key</label>
       <input id="publicKeyInput" type="text"/>
 
-      <label for="privateKeyInput">Enter your Private Key</label>
+      <label id="privateKeyLabel" for="privateKeyInput">Enter your Private API Key</label>
       <input id="privateKeyInput" type="text"/>
-      <input  type="submit" onclick="othername()" />
+      <input  type="submit" onclick="keyCheck()" />
       <div id="refer"><p>Don't have a key? Head over <a href="https://developer.marvel.com/">Here</a></p></div>
     </form>
-
-
   </div>
+  <div class="loader"></div>
   <div id="characters">
     <div id="avengers">
         <h1 id="avengersTitle" class="groupTitle">THE ORIGINAL AVENGERS</h1>

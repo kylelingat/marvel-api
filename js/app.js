@@ -3,15 +3,41 @@ var PRIV_KEY;
 var PUBLIC_KEY;
 //"74147ee7b91d932edc968cb4cbbbdd1e";
 var ts = new Date().getTime();
-var hash = CryptoJS.MD5(ts + PRIV_KEY + PUBLIC_KEY).toString();
+var hash;
 var url = 'https://gateway.marvel.com:443/v1/public/characters';
 var modal = document.getElementById('myModal');
 var span = document.getElementsByClassName("close")[0];
-function othername() {
+function keyCheck() {
     PUBLIC_KEY = document.getElementById("publicKeyInput").value;
     PRIV_KEY = document.getElementById("privateKeyInput").value;
+    hash = CryptoJS.MD5(ts + PRIV_KEY + PUBLIC_KEY).toString();
+    console.log(PRIV_KEY);
     console.log(PUBLIC_KEY);
-    console.log(PRIV_KEY)
+    checkApiKey();
+    $('#inputKeys').css("display","none");
+    $('.loader').css("display","block");
+}
+
+function checkApiKey(){
+  $.getJSON(url, {
+          ts: ts,
+          apikey: PUBLIC_KEY,
+          hash: hash
+      })
+      .done(function(data) {
+        $('.loader').css("display","none");
+        console.log(url);
+        $('#characters').css("display", "block")
+        getMarvelResponse("Captain America");
+        getMarvelResponse("Thor");
+      })
+      .fail(function(err) {
+          console.log(err);
+          $('.loader').css("display","none");
+          $('#inputKeys').css("display","flex");
+          $("#publicKeyLabel").html("Enter your Public API Key <span>(Oops, you have entered an incorrect API key)</span>")
+          $("#privateKeyLabel").html("Enter your Private API Key <span>(Oops, you have entered an incorrect API key)</span>")
+      });
 }
 
 function getMarvelResponse(charName) {
@@ -136,8 +162,7 @@ function getMarvelResponse(charName) {
 };
 
 
-// getMarvelResponse("Captain America");
-// getMarvelResponse("Thor");
+
 // getMarvelResponse("Iron Man");
 // getMarvelResponse("Hulk");
 // getMarvelResponse("Black Widow");
